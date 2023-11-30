@@ -62,7 +62,7 @@ UPDATE universidad.profesores SET departamento = 'Ventas' where departamento = '
 UPDATE universidad.profesores SET direccion = '9064 Express Trail' ,salario = 1900 WHERE id = 5
 
 -- Actualizar la di
-UPDATE universidad.profesores SET  WHERE
+-- UPDATE universidad.profesores SET  WHERE
 
 -- Eliminar el profesor con id = 1
 DELETE FROM universidad.profesores WHERE id = 1;
