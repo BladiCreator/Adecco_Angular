@@ -206,10 +206,105 @@ SELECT * FROM cursos;
 
 SELECT COUNT(*) FROM estudiantes;
 
-SELECT * FROM estudiantes, cursos WHERE estudiantes.id = cursos.id_estudiante;
+SELECT *
+FROM estudiantes, cursos
+WHERE
+    estudiantes.id = cursos.id_estudiante;
 
 -- **One to many
 
+CREATE Table
+    clientes (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        nombre VARCHAR(50),
+        direccion VARCHAR(100) DEFAULT 'dirección no especificada'
+    );
 
+INSERT into
+    clientes (nombre, direccion)
+VALUES (
+        'Karlyn Diess',
+        '83 Lyons Place'
+    );
+
+insert into
+    clientes (nombre, direccion)
+values (
+        'Kevon Presshaugh',
+        '0 Surrey Point'
+    );
+
+insert into
+    clientes (nombre, direccion)
+values (
+        'Bil Pakeman',
+        '2874 Oak Parkway'
+    );
+
+insert into
+    clientes (nombre, direccion)
+values (
+        'Madalyn Klejna',
+        '31420 Moulton Street'
+    );
+
+insert into
+    clientes (nombre, direccion)
+values (
+        'Aube Carryer',
+        '43659 Haas Hill'
+    );
+
+CREATE Table
+    ventas(
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        monto DECIMAL(10, 2),
+        id_cliente INT,
+        Foreign Key (id_cliente) REFERENCES clientes(id)
+    );
+
+insert into ventas (monto, id_cliente) values (2769.55, 1);
+
+insert into ventas (monto, id_cliente) values (8549.61, 2);
+
+insert into ventas (monto, id_cliente) values (5560.27, 3);
+
+insert into ventas (monto, id_cliente) values (6797.57, 4);
+
+insert into ventas (monto, id_cliente) values (4211.07, 5);
+
+SELECT * FROM clientes;
+
+SELECT * FROM ventas;
+
+SELECT * FROM clientes, ventas WHERE clientes.id = ventas.id_cliente;
+SELECT * FROM clientes, ventas WHERE clientes.id = ventas.id_cliente AND monto BETWEEN 5000 AND 8000;
 
 -- **Many to Many
+
+CREATE Table departamentos(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50)
+);
+
+insert into departamentos (nombre) values ('Jenkins-Pfeffer');
+insert into departamentos (nombre) values ('Cormier Inc');
+insert into departamentos (nombre) values ('Lang Group');
+insert into departamentos (nombre) values ('Hoeger Group');
+insert into departamentos (nombre) values ('Nicolas-Hackett');
+
+CREATE Table empleados(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50),
+    apellido VARCHAR(50),
+    id_departamentos INT,
+    Foreign Key (id_departamentos) REFERENCES  departamentos(id)
+);
+
+insert into empleados (nombre, apellido, id_departamentos) values ('Sunny', 'Soigne', 1);
+insert into empleados (nombre, apellido, id_departamentos) values ('Arlina', 'Panichelli', 2);
+insert into empleados (nombre, apellido, id_departamentos) values ('Florella', 'Knowlman', 3);
+insert into empleados (nombre, apellido, id_departamentos) values ('Mata', 'Braunlein', 4);
+insert into empleados (nombre, apellido, id_departamentos) values ('Alicia', 'Lipp', 5);
+
+SELECT * FROM empleados, departamentos WHERE empleados.id_departamentos = departamentos.id;
