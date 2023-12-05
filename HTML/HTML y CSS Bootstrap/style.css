@@ -1,0 +1,14 @@
+.bg-container {
+    background-image: url("assets/images/banner.jpg");
+    background-size: cover;
+    width: 100%;
+    aspect-ratio: 2500/1667;
+}
+
+.navbar-color {
+    background-image: linear-gradient(to right, #FF14EA 10%, #3653E3, #0097FF);
+}
+
+.button-outline {
+    background-color: white;
+}
