@@ -4,4 +4,4 @@ SELECT * FROM coche;
 
 SELECT * FROM conductores;
 
-SELECT * FROM coche, conductores, conductores_coches WHERE coche.id = conductores_coches.id AND conductores.id =;
+SELECT * FROM coche, conductores, conductores_coches WHERE coche.id = conductores_coches.id_conductor AND conductores.id = conductores_coches.id_conductor;
