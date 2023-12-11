@@ -1,14 +1,117 @@
-.bg-container {
-    background-image: url("assets/images/banner.jpg");
+:root{
+    --text-color-hover:cyan;
+    --text-color:white ;
+    --bg-color: black;
+}
+
+.hero-banner {
+    background-image: url("assets/images/banner.png");
     background-size: cover;
     width: 100%;
-    aspect-ratio: 2500/1667;
+    aspect-ratio: 692/221;
+    position: relative;
+}
+
+.hero-banner h1 {
+    position: absolute;
+    top: 25%;
+    left: 10%;
 }
 
 .navbar-color {
-    background-image: linear-gradient(to right, #FF14EA 10%, #3653E3, #0097FF);
+    background-color: var(--bg-color) !important;
+}
+
+nav a {
+    color: hsl(0, 0%, 60%) !important;
+}
+
+.active {
+    color: var(--text-color) !important;
+    font-weight: bold !important;
+}
+
+nav a:hover {
+    color: var(--text-color-hover) !important;
+}
+
+.btn-outline-color {
+    background-color: var(--text-color);
+}
+
+.btn-outline-color:hover {
+    color: var(--text-color-hover);
+    background-color: var(--text-color);
+}
+
+.btn-fill-color {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
+}
+
+.btn-fill-color:hover svg {
+    color: var(--text-color-hover);
 }
 
 .button-outline {
-    background-color: white;
+    background-color: var(--text-color);
+}
+
+.gradient-card {
+    height: max-content;
+    width: max-content;
+}
+
+.car-card {
+    background-color: rgba(42, 114, 231, 0.05);
+    border-radius: .45rem;
+    padding: .60em;
+    margin-inline: .40em;
+    margin-top: .40em;
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.img-container>img {
+    width: 250px;
+}
+
+.car-card p {
+    height: 10em;
+    max-height: 10em;
+    overflow: auto;
+    text-overflow: ellipsis;
+    text-wrap: pretty;
+}
+
+.buy-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer {
+    background-color: var(--bg-color);
+}
+
+footer a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--text-color-hover);
+}
+
+footer li {
+    list-style: none;
+}
+
+.navbar-brand img {
+    width: 64px;
 }
